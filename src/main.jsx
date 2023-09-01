@@ -7,10 +7,13 @@ import EditarProdutos from '../routes/EditarProdutos.jsx'
 import Erro404 from '../routes/Erro404.jsx'
 import Produtos from '../routes/Produtos.jsx'
 
+const router = createBrowserRouter([ 
+  {path: '/', element: <App/>}
+])
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router}/>
   </React.StrictMode>,
 )

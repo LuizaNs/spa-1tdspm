@@ -11,3 +11,5 @@ export default function EditarProdutos() {
     </div>
   )
 }
+
+//hook - funções pré-determinadas, que podem ser usados para ajudar o código. Auxiliam a manioular o ambiente, hook mais utilizado, use-state. 

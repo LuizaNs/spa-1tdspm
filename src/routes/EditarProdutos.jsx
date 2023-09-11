@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { ListaProdutos } from "../components/ListaProdutos";
 import { useState } from "react";
 
@@ -8,6 +8,9 @@ export default function EditarProdutos() {
 
     //Recuperando o ID do produto selecionado com useParams()
     const {id} = useParams();
+
+    //Utilizando o useNavigate para fazer um redirect
+    const navigate = useNavigate()
 
     const produtoRecuperadoDaListaById = ListaProdutos.filter(item => item.id == id );
     
@@ -21,7 +24,23 @@ export default function EditarProdutos() {
     const handleChange = (event) =>{
         
       const {name, value} = event.target;
+      setProduto({...produto,[name]:value});
 
+    }
+
+    const handleSubmit = (event) =>{
+        event.preventDefault();
+
+        let indice;
+        ListaProdutos.forEach((item,index)=>{
+            if(item.id == produto.id){
+              indice = index;
+            }
+        });
+
+        ListaProdutos.splice(indice,1,produto);
+
+        navigate("/produtos");
     }
 
   return (
@@ -29,7 +48,7 @@ export default function EditarProdutos() {
         <h1>EDITAR - PRODUTOS</h1>
 
         <div>
-          <form>
+          <form onSubmit={handleSubmit}>
             <fieldset>
               <legend>PRODUTO SELECIONADO</legend>
               <div>

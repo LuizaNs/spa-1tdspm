@@ -10,7 +10,7 @@ export default function Produtos() {
     fontFamily:"Arial, Trebuchet, sans-serif"
   }
 
-  return (
+  return ( 
     <div>
       <h1>LISTA DE PRODUTOS</h1>
 

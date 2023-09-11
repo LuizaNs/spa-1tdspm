@@ -18,6 +18,12 @@ export default function EditarProdutos() {
       valor: produtoRecuperadoDaListaById[0].valor
     });
 
+    const handleChange = (event) =>{
+        
+      const {name, value} = event.target;
+
+    }
+
   return (
     <div>
         <h1>EDITAR - PRODUTOS</h1>
@@ -27,16 +33,19 @@ export default function EditarProdutos() {
             <fieldset>
               <legend>PRODUTO SELECIONADO</legend>
               <div>
+                <input type="hidden" name="id" value={produto.id} onChange={handleChange}/>
+              </div>
+              <div>
                 <label htmlFor="idNome">Nome do Produto:</label>
-                <input type="text" name="nome" id="idNome" defaultValue={produto.nome}/>
+                <input type="text" name="nome" id="idNome" value={produto.nome} onChange={handleChange}/>
               </div>
               <div>
                 <label htmlFor="idDesc">Descrição do Produto:</label>
-                <input type="text" name="desc" id="idDesc" defaultValue={produto.desc}/>
+                <input type="text" name="desc" id="idDesc" value={produto.desc} onChange={handleChange}/>
               </div>
               <div>
                 <label htmlFor="idValor">Valor do Produto:</label>
-                <input type="text" name="valor" id="idValor" defaultValue={produto.valor}/>
+                <input type="text" name="valor" id="idValor" value={produto.valor} onChange={handleChange}/>
               </div>
               <div>
                 <button>EDITAR</button>

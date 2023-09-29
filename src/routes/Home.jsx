@@ -3,7 +3,7 @@ export default function Home() {
     <div>
       <h1>Home</h1>
       <figure>
-        <img src="/img/produtos_all.jpg" alt="Vários produtos." />
+        <img src="/public/images/produtos_all.jpg" alt="Vários produtos."/>
       </figure>
 
     </div>

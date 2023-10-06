@@ -4,7 +4,7 @@ import {RiDeleteBin2Fill as Excluir} from "react-icons/ri";
 import style from "./Produtos.module.css";
 import { useEffect, useState } from "react";
 import ModalInserir from "../components/ModalInserir/ModalInserir";
-import "./Produtos.scss";
+import "./Produtos.scss"
 
 export default function Produtos() {
   document.title = "Produtos";
@@ -33,7 +33,7 @@ export default function Produtos() {
 
       {open ? <ModalInserir open={open} setOpen={setOpen}/> : "" }
 
-      <button onClick={()=> setOpen(true)}>CADASTRAR PRODUTO</button>
+      <button onClick={()=> setOpen(true)}>OPEN-MODAL</button>
 
       <table className={style.tblEstilo}>
         <thead>
@@ -94,4 +94,3 @@ export default function Produtos() {
 // <div>
 // <button onClick={()=> setCounter2(counter2 + 1)}>COUNTER2 - {counter2}</button>
 // </div>
-
